@@ -1,0 +1,34 @@
+<header id="header">
+    <h1>huseyn.book</h1>
+    <ul class="header-items">
+      <li><a class="header-item" href="/">Домой</a></li>
+      <li><a class="header-item" href="/category">Категория</a></li>
+      <li><a class="header-item" href="/about">О нас</a></li>
+      <li><a class="header-item" href="/chosen">Избраные</a></li>
+      <li><a class="header-item" href="/basket">Карзина</a></li>
+      <li><a class="header-item" href="/buy">Мои покупки</a></li>
+    </ul>
+    <% if(data == '') {%>
+      <ul class="auth">
+        <a class="reg" href="/reg">Регистрация</a>
+        <a class="reg" href="/auth">Авторизация</a>
+      </ul>
+      <% }else {%>
+      <ul class="succ-auth">
+        <div class="controlProfil">
+          <li class="profil" title="Ваш профил"><%= profilName.substr(0, 1) %></li>
+          <div class="hiddenBlock none">
+            <h4 class="WellcomeUser">Дабро пожаловать <%= profilName %>!</h4>
+            <ul>
+              <li class="menuHeader"><a class="menuHeader" href="/myprofil">Мой профил</a></li>
+              <li class="menuHeader"><a class="menuHeader" href="/product">Мои товары</a></li>
+              <li class="menuHeader"><a class="menuHeader" id="exit" href="/chose">Выйти</a></li>
+            </ul>
+          </div>
+        </div>
+        <li><a class="add-book-button" href="/getBook">Добавить книгу +</a></li>
+      </ul>
+    <%}%>
+
+    <script src="/scripts/header.js"></script>
+</header>

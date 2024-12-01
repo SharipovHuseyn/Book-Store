@@ -1,0 +1,680 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Правильные имена */
+:root {
+    --dark-grey: rgb(41, 34, 34);
+    --dark-white: rgb(76, 69, 69);
+    --blue-sky: rgb(51, 159, 195);
+    --green-success: rgb(36, 192, 36);
+    --red-white: rgb(225, 75, 75);
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--dark-grey);
+    margin: 30px;
+    border-radius: 5px;
+}
+
+.header-items{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-item{
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+.header-item:hover{
+    color: var(--blue-sky);
+}
+
+.auth{
+    display: flex;
+}
+
+.reg{
+    border-radius: 5px;
+    color: var(--blue-sky);
+    background-color: var(--dark-grey);
+    border: 2px solid var(--blue-sky);
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.reg:hover{
+    color: var(--dark-grey);
+    background-color: var(--blue-sky);
+    border: 2px solid var(--dark-grey);
+}
+
+main{
+    margin-top: 80px;
+    width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.header-image img{
+    width: 100%;
+}
+
+#books{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.book{
+    border: 2px solid var(--dark-grey);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    display: grid;
+    align-items: end;
+}
+
+.book-image{
+    width: 250px;
+}
+
+.book-buy-button{
+    width: 100%;
+    border-radius: 5px;
+    color: var(--blue-sky);
+    background-color: var(--dark-grey);
+    border: 2px solid var(--blue-sky);
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.book-buy-button:hover{
+    color: var(--dark-grey);
+    background-color: var(--blue-sky);
+    border: 2px solid var(--dark-grey);
+}
+
+.book-name, .book-price, .book-about{
+    margin-top: 10px;
+}
+
+.book-about{
+    color: black;
+}
+
+footer{
+    background-color: var(--dark-grey);
+    margin-top: 80px;
+    height: 50px;
+    padding: 40px;
+}
+
+.sotset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.my-pagesite{
+    color: var(--blue-sky);
+    font-weight: 600;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.logo{
+    color: white;
+    margin: 10px;
+}
+
+.backgraund{
+    background-color: var(--dark-grey);
+    display: flex;
+    justify-content: center;
+}
+
+.registration, .authg, .getBook{
+    border-radius: 5px;
+    border: 2px solid var(--blue-sky);
+    display: grid;
+    text-align: center;
+    padding: 30px;
+    margin: 130px;
+}
+
+.input-reg{
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: var(--dark-grey);
+}
+
+.authg{
+    margin: 210px;
+}
+
+#chosen, .star{
+    width: 35px;
+}
+
+.book_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.profil{
+    border: 2px solid var(--blue-sky);
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.profil:hover{
+    background-color: var(--dark-grey);
+    color: var(--blue-sky);
+}
+
+.succ-auth{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-book-button{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--blue-sky);
+    color: var(--dark-grey);
+    text-decoration: none;
+}
+
+.add-book-button:hover{
+    background-color: var(--dark-grey);
+    color: var(--blue-sky);
+    border: 2px solid var(--blue-sky);
+}
+
+#getBook{
+    background-color: brown;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    height: 800px;
+}
+
+.getBook{
+    margin: 119px;
+}
+
+.onBasket{
+    background-color: var(--green-success);
+    color: var(--dark-grey);
+    border: 2px solid var(--dark-grey);
+}
+
+.onBasket:hover{
+    background-color: var(--dark-grey);
+    color: var(--green-success);
+    border: 2px solid var(--green-success);
+}
+
+.basketBag{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 900px;
+    padding: 10px;
+    background-color: white;
+}
+
+.basketimage{
+    width: 90px;
+}
+
+.close{
+    width: 20px;
+    cursor: pointer;
+}
+
+.closeAndstar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+}
+
+.countBasketBook{
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#countBook{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--blue-sky);
+    background-color: var(--dark-grey);
+    border: 2px solid var(--blue-sky);
+    border-radius: 5px;
+}
+
+#countBook:hover{
+    color: var(--dark-grey);
+    background-color: var(--blue-sky);
+    border: 2px solid var(--dark-grey);
+}
+
+.none, #none{
+    display: none;
+}
+
+.basketContiner{
+    background-color: var(--dark-grey);
+    margin: 20px;
+}
+
+.nameBookInBasket{
+    color: var(--blue-sky);
+    margin-bottom: 20px;
+}
+
+.resbs{
+    background-color: var(--blue-sky);
+    padding: 10px;
+}
+
+.ssImg{
+    width: 40px;
+}
+
+.hiddenBlock{
+    position: absolute;
+    background-color: var(--dark-grey);
+    width: 200px;
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+}
+
+.menuHeader{
+    margin-top: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--blue-sky);
+}
+
+.menuHeader:hover{
+    color: white;
+}
+
+.WellcomeUser{
+    color: var(--green-success);
+}
+
+.imgBookAbout{
+    width: 300px;
+}
+
+.blockAboutBook{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.back{
+    width: 30px;
+    height: 30px;
+}
+
+.funSite{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.priceAboutBook{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.myLoName{
+    padding: 10px;
+    background-color: var(--dark-grey);
+    color: var(--blue-sky);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    border: 8px solid var(--blue-sky);
+    font-size: 75px;
+    margin-left: 25px;
+}
+
+.mainMyProfil{
+    display:flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.blockMyProfil{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.myDataInput{
+    padding: 5px;
+    font-size: 20px;
+    width: 200px;
+}
+
+.myDataHeader{
+    width: 214px;
+}
+
+.profilBookImage{
+    width: 250px;
+}
+
+.ProfilBookBlock{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-left: 80px;
+}
+
+.profilBookCart{
+    margin: 50px;
+    border: 2px solid;
+    text-align: center;
+    padding: 14px;
+    border-radius: 5px;
+}
+
+.posMyBook{
+    position: absolute;
+    margin-left: 50px;
+    color: var(--blue-sky);
+}
+
+.updateImgProfil{
+    width: 45px;
+}
+
+.updateData{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.logoProfil{
+    margin-left: 155px;
+    margin-top: 20px;
+    width: fit-content;
+    color: var(--dark-grey);
+}
+
+.myFullName{
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.NameProfil{
+    text-align: center;
+    margin-left: 25px;
+}
+
+.headData{
+    margin-left: 10px;
+}
+
+.conDataHeader{
+    padding: 5px;
+    font-size: 18px;
+    display: flex; 
+    align-items: center;
+}
+
+.bookProductImege{
+    width: 220px;
+}
+
+.delete-book-button{
+    width: 100%;
+    border-radius: 5px;
+    color: var(--red-white);
+    background-color: var(--dark-grey);
+    border: 2px solid var(--red-white);
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.delete-book-button:hover{
+    color: var(--dark-grey);
+    background-color: var(--red-white);
+    border: 2px solid var(--dark-grey); 
+}
+
+.priceProduct{
+    display:flex;
+    font-size: 20px;
+}
+
+.productBlock{
+    border: 2px solid var(--dark-grey);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.disProduct{
+    display: grid;
+    align-items: end;
+}
+
+.productsBlock{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+}
+
+.mainProduct{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.choseBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin-top: 52px;
+    margin-bottom: 55px;
+}
+
+.choseBlockIn{
+    text-align: center;
+}
+
+.buyPageBtn{
+    color: var(--blue-sky);
+    text-decoration: none;
+    width: 100%;
+}
+
+.buyPageBtn:hover{
+    color: var(--dark-grey);
+}
+
+.libImage{
+    height: 300px;
+    width: 200px;
+}
+
+.category-items{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.category-item{
+    margin: 20px;
+    text-align: center;
+}
+
+.linkCategory{
+    text-decoration: none;
+    color: var(--blue-sky);
+}
+
+.errImage{
+    width: 400px;
+}
+
+.errBlock{
+    width: 80%;
+    text-align: center;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2px;  
+    width: 100px;
+    height: 100px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.imageShowStyle{
+    width: 100px;
+    height: 100px;
+    border-radius: 2px;  
+
+}
+
+.imgShow{
+
+}
+
+.btnClearImage{
+    background-color: var(--red-white);
+    color: white;
+    border: 1px solid white;
+    padding: 3px;
+    position: absolute;
+    margin-left: 178px;
+    margin-top: 58px;
+    cursor: pointer;
+}
+
+.addImageForBook{
+    width: 100px;
+}
+
+.myPhoto{
+    width: 400px;
+}
+
+.aboutMe{
+    display: flex;
+    width: 80%;
+}
+
+.myPhotoAndmyName{
+    text-align: center;
+}
+
+.myName{
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+    margin-top: 10px;
+    font-size: 40px;
+    line-height: 40px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.textMyProfil{
+    font-size: 19px;
+}
+
+.searchBlock{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 160px;
+    margin-left: 200px;
+}
+
+.search{
+    width: 450px;
+    height: 20px;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid var(--blue-sky);
+}
+
+.btnSearch{
+    width: 70px;
+    padding: 2px;
+    border-radius: 0;
+    background-color: var(--dark-grey);
+    color: var(--blue-sky);
+    font-weight: 600;
+    border: 2px solid var(--blue-sky);
+}
+
+.btnSearch:hover{
+    background-color: var(--dark-white);
+}
+
+.colorBlue{
+    color: var(--blue-sky);
+}

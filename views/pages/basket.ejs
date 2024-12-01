@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Корзина</title>
+    <link rel="stylesheet" href="/style/style.css" />
+</head>
+
+<body>
+    <%- include('../part/header.ejs'); %>
+
+        <main>
+            <div class="basketContiner">
+                <h1 class="logo">huseyn.book</h1>
+                <div class="basketBags">
+                    <% for(let i = 0; i < basketResult.length; i++){  %>
+                        <div class="basketBag chosenBtn" data-id="<%= basketResult[i].id %>">
+                            <div class="closeAndstar">
+                                <img class="close" src="/image/icon/close.png" alt="star" />
+                                <div class="chosenChose">
+                                    <% let isChosen = false; %>
+                                    <% for(let u = 0; u < chosenBook.length; u++){ %>
+                                        <% if(chosenBook[u].book_id == basketResult[i].id){ %>
+                                        <div class="onChosenBlock">
+                                            <img id="chosen" class="onChosen" src="/image/icon/inStar.png" alt="star">
+                                        </div>
+                                        <% isChosen = true; %>
+                                        <% break; %>
+                                        <% } %>
+                                    <% } %>
+                                    <% if (!isChosen) { %>
+                                        <div class="offChosenBlock">
+                                        <img id="chosen" class="offChosen" src="/image/icon/unStar.png" alt="star">
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="basketimage" src="/image/book/<%= basketResult[i].book_image%>" alt="<%= basketResult[i].book_header %>" />
+                            </div>
+                            <div>
+                                <h2 class="nameBookInBasket"><%= basketResult[i].book_header %></h2>
+                                <p><b>Продовец: </b><%= authorBook[i] %></p>
+                                <p class="book-about"><a class="book-about" href="/aboutBook/<%= basketResult[i].id %>">Подробное -></a></p>
+                            </div>
+                            <div class="countBasketBook">
+                                <button id="countBook" class="minusCount">-</button>
+                                <h3 class="countBookValue"><%= basket[i].countBook %></h3>
+                                <button id="countBook" class="plusCount">+</button>
+                            </div>
+                            <div>
+                                <p><b class="priceB"><%= basketResult[i].book_price %></b> рублей</p>
+                            </div>
+                        </div>
+                        <hr />
+                    <%}%>
+                </div>
+                <div class="buyBook">
+                    <h3 class="resbs">Итог: <b class="resultPrice"></b> рублей <button class="book-buy-button">Оформить заказ</button></h3>
+                </div>
+            </div>
+        </main>
+
+    <script src="/scripts/chosen.js"></script>
+    <script src="/scripts/basket.js"></script>
+    <script src="/scripts/buy.js"></script>
+
+</body>
+
+</html>

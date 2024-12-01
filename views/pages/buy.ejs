@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои покупки</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <%- include('../part/header.ejs'); %>
+
+   <main>
+    <div id="books">
+        <% for(let i = 0; i < newRes.length; i++){ %>
+            <div class="book chosenBtn basketBtn" data-id="<%= newRes[i].id %>">
+                <img class="book-image" src="/image/book/<%= newRes[i].book_image %>" alt="<%= newRes[i].book_header %>">
+                <div class="book_info">
+                  <div>
+                    <h4 class="book-name"><%= newRes[i].book_header %></h4>
+                    <p class="book-price">Цена книги: <b><%= newRes[i].book_price %></b> рублей</p>
+                  </div>
+                </div>
+                <button class="book-buy-button" onclick="window.location.href='/aboutBook/<%= newRes[i].id %>'">Посмотреть</button>
+            </div>
+        <%}%>
+       </div>
+   </main>
+
+    <%- include('../part/footer.ejs'); %>
+</body>
+</html>

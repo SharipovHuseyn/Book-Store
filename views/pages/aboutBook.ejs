@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.book_header %></title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <main class="basketBtn chosenBtn mainAboutBook" data-id="<%= data.id %>"> 
+        <img class="back" src="/image/forSite/back.png" alt="back">
+       <div class="blockAboutBook">
+            <div>
+                <img class="imgBookAbout" src="/image/book/<%= data.book_image %>" alt="<%= data.book_header %>">
+            </div>
+            <div>
+                <h1><%= data.book_header %></h1>
+                <h3 class="priceAboutBook">Цена книги: <%= data.book_price %> рублей</h3>
+                <h4>Продовец: <%= author %></h4>
+                <div class="funSite">
+                    <div class="chosenChose">
+                        <% if(chosen.length === 0){ %>
+                            <div class="offChosenBlock">
+                                <img id="chosen" class="offChosen" src="/image/icon/unStar.png" alt="star">
+                            </div>
+                        <% }else{ %>
+                            <div class="onChosenBlock">
+                                <img id="chosen" class="onChosen" src="/image/icon/inStar.png" alt="star">
+                            </div>
+                        <% } %>
+                    </div>
+    
+                    <div class="basketButton">
+                        <% if(basket.length === 0){ %>
+                            <button class="book-buy-button" id="offBasket">В карзину</button>
+                        <% } else{  %>
+                            <button class="onBasket book-buy-button">В карзине</button>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </main>
+    <%- include('../part/footer.ejs'); %>
+
+    <script src="/scripts/chosen.js"></script>
+    <script src="/scripts/back.js"></script>
+</body>
+</html>

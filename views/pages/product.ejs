@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои товары</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <img class="back logoProfil" src="/image/forSite/back.png" alt="back">
+    <div class="logoProfil">
+        <h1>huseyn.book</h1><br>
+        <h2>Ваши товары</h2>
+    </div>
+    <main class="mainProduct">
+       <div class="productsBlock">
+        <% for(let i = 0; i < product.length; i++){ %>
+            <div class="disProduct">
+                <div class="productBlock" data-id="<%= product[i].id %>">
+                    <img class="bookProductImege" src="/image/book/<%= product[i].book_image %>" alt="<%= product[i].book_header %>">
+                    <h1><%= product[i].book_header %></h1>
+                    <p class="book-price">Цена книги: <b><%= product[i].book_price %></b> рублей</p>
+                    <button class="delete-book-button">Удалить</button>
+                </div>
+            </div>
+        <% } %>
+       </div>
+    </main>
+
+    <%- include('../part/footer.ejs') %>
+    <script src="/scripts/back.js"></script>
+    <script src="/scripts/delete.js"></script>
+</body>
+</html>

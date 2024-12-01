@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.name %></title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <h1 class="logoProfil">huseyn.book</h1>
+    <main class="mainMyProfil">
+        <div class="blockMyProfil">
+            <img class="back" src="/image/forSite/back.png" alt="back">
+            <div class="dataBlock">
+                <div class="NameProfil">
+                    <h1 class="myLoName"><%= (data.name).substr(0,1) %></h1>
+                    <h2 class="myFullName"><%= data.name %> <%= data.fast_name %></h2>
+                </div>
+                <div class="updateData">
+                    <input class="myDataInput none" type="text" value="<%= data.mail %>" id="mail">
+                    <div class="myDataHeader "><div class="conDataHeader">Почта: <h3 class="headData"><%= data.mail %></h3></div></div>
+                    <img class="updateImgProfil" src="/image/forSite/update.png" alt="update">
+                </div>
+                <div class="updateData">
+                    <input class="myDataInput none" type="text" id="name" value="<%= data.name %>">
+                    <div class="myDataHeader "><div class="conDataHeader">Имя: <h3 class="headData" ><%= data.name %></h3></div></div>
+                    <img class="updateImgProfil" src="/image/forSite/update.png" alt="update">
+                </div>
+                <div class="updateData">
+                    <input class="myDataInput none" type="text" value="<%= data.fast_name %>" id="fast_name">
+                    <div class="myDataHeader "><div class="conDataHeader">Фамилия: <h3 class="headData"><%= data.fast_name %></h3></div></div>
+                    <img class="updateImgProfil" src="/image/forSite/update.png" alt="update">
+                </div>
+                <div class="updateData">
+                    <input class="myDataInput none" type="number" value="<%= data.age %>" max="80" min="12" id="age">
+                    <div class="myDataHeader "><div class="conDataHeader">Возраст: <h3 class="headData"><%= data.age %></h3></div></div>
+                    <img class="updateImgProfil" src="/image/forSite/update.png" alt="update">
+                </div>
+                <button class="book-buy-button">Изменить данные</button>
+            </div>
+            <div class="ProfilBookBlock">
+            <h1 class="posMyBook">Мои тавары <hr></h1>
+                <% for(let i = 0; i < authorBook.length; i++){ %>
+                    <div class="profilBookCart" data-id="<%= authorBook[i].id %>">
+                        <img class="profilBookImage" src="/image/book/<%= authorBook[i].book_image %>" alt="<%= authorBook[i].book_header %>">
+                        <h1><%= authorBook[i].book_header %></h1>
+                        <div class="updateData">
+                            <input class="myDataInput none" type="text" value="<%= authorBook[i].book_header %>" id="book_header">
+                            <div class="myDataHeader "><div class="conDataHeader">Названия: <h3 class="headData"><%= authorBook[i].book_header %></h3></div></div>
+                            <img class="updateImgProfil" src="/image/forSite/update.png" alt="update">
+                        </div>
+                        <div class="updateData">
+                            <input class="myDataInput none" type="number" value="<%= authorBook[i].book_price %>" id="book_price">
+                            <div class="myDataHeader "><div class="conDataHeader">Цена: <h3 class="headData"><%= authorBook[i].book_price %></h3></div></div>
+                            <img class="updateImgProfil" src="/image/forSite/update.png" alt="update">
+                        </div>
+                        <button class="book-buy-button">Изменить данные</button>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../part/footer.ejs') %>
+
+    <script src="/scripts/back.js"></script>
+    <script src="/scripts/profil.js"></script>
+</body>
+</html>

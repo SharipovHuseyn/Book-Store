@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/style.css">
+  <title>Домой</title>
+</head>
+<body>
+  <%- include('../part/header.ejs'); %>
+  <div class="header-image">
+      <div class="searchBlock">
+          <input class="search" type="text" name="search" placeholder="Поиск...">
+      </div>
+    <img src="/image/forSite/shapka.jpg" alt="shapka">
+  </div>
+  <main>
+    <div id="books">
+      <% for(let i = 0; i < book.length; i++){ %>
+        <div class="book searchEl chosenBtn basketBtn" data-id="<%= book[i].id %>">
+          <img class="book-image" src="/image/book/<%= book[i].book_image %>" alt="<%= book[i].book_header %>">
+          <div class="book_info">
+            <div>
+              <h4 class="book-name"><%= book[i].book_header %></h4>
+              <p class="book-price">Цена книги: <b><%= book[i].book_price %></b> рублей</p>
+            </div>
+            <div class="chosenChose">
+              <% let isChosen = false; %>
+              <% for(let u = 0; u < chosenBook.length; u++){ %>
+                <% if(chosenBook[u].book_id == book[i].id){ %>
+                  <div class="onChosenBlock">
+                    <img id="chosen" class="onChosen" src="/image/icon/inStar.png" alt="star">
+                  </div>
+                  <% isChosen = true; %>
+                  <% break; %>
+                <% } %>
+              <% } %>
+              <% if (!isChosen) { %>
+                <div class="offChosenBlock">
+                  <img id="chosen" class="offChosen" src="/image/icon/unStar.png" alt="star">
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <p class="book-about"><a class="book-about" href="/aboutBook/<%= book[i].id %>">Подробное -></a></p>
+          <div class="basketButton">
+            <% let inBasket = false; %>
+            <% for(let j = 0; j < basketBooks.length; j++){ %>
+              <% if(basketBooks[j].book_id == book[i].id) {%>
+                <button class="onBasket book-buy-button">В карзине</button>
+                <% inBasket = true; %>
+                <% break; %>
+              <% } %>
+            <% } %>
+            <% if (!inBasket) { %>
+              <button class="book-buy-button" id="offBasket">В карзину</button>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </main>
+
+  <%- include('../part/footer.ejs'); %>
+  <script src="/scripts/chosen.js"></script>
+  <script src="/scripts/basket.js"></script>
+  <script src="/scripts/search.js"></script>
+
+</body>
+</html>

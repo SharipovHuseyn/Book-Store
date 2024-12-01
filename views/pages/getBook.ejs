@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добовления книг</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<style>
+</style>
+
+<body>
+    <div class="backgraund">
+        <form action="/getBook" method="post"  enctype="multipart/form-data">
+            <div class="getBook">
+                <h1 class="logo">huseyn.book</h1>
+                <div class="input-imageShow">
+                    <label class="custom-file-upload">
+                        <input class="input-reg" type="file" id="file-upload" name="book_image" accept="image/*"/>
+                        <img class="addImageForBook" src="/image/forSite/addImage.png" alt="">
+                    </label>
+                </div>
+                <div class="btnClearImage none">X</div>
+                <div class="imgShow none">
+                </div>
+                <input class="input-reg" type="text" name="book_header" placeholder="Имя книги">
+                <input class="input-reg" type="number" name="book_price" placeholder="Цена книги">
+                <select name="category" class="input-reg">
+                    <option class="input-reg" value="Artistic" selected>Художественная литература</option>
+                    <option class="input-reg" value="NonFiction">Нехудожественная литература</option>
+                    <option class="input-reg" value="Scientific">Научная литература</option>
+                    <option class="input-reg" value="Fantasy">Фантастика и фэнтези</option>
+                    <option class="input-reg" value="Journalism">Публицистика и журналистика</option>
+                </select>
+                <button class="book-buy-button">Добавить</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/scripts/imgInput.js"></script>
+</body>
+</html>
